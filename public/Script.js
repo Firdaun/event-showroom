@@ -9,26 +9,36 @@ async function loadRankingData() {
         }
         const data = (await response.json());
         const rankings = data.ranking;
-        container.innerHTML = '';
-        rankings.forEach((member) => {
-            const card = document.createElement('div');
-            card.className = 'member-card';
-            card.setAttribute('data-rank', member.rank.toString());
-            const cleanName = member.room.name.replace(/\s*[（\(]JKT48[）\)]/i, '');
-            card.innerHTML = `
-                <div class="rank-info">
-                    <div class="rank-number">${member.rank}</div>
-                    <div class="member-details">
-                        <h2>${cleanName}</h2>
+        const renderData = () => {
+            container.innerHTML = '';
+            rankings.forEach((member) => {
+                const card = document.createElement('div');
+                card.className = 'member-card';
+                card.setAttribute('data-rank', member.rank.toString());
+                const cleanName = member.room.name.replace(/\s*[（\(]JKT48[）\)]/i, '');
+                card.innerHTML = `
+                    <div class="rank-info">
+                        <div class="rank-number">${member.rank}</div>
+                        <div class="member-details">
+                            <h2>${cleanName}</h2>
+                        </div>
                     </div>
-                </div>
-                <div class="point-info">
-                    <div class="points">${member.point.toLocaleString('id-ID')}</div>
-                    <div class="point-label">Points</div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+                    <div class="point-info">
+                        <div class="points">${member.point.toLocaleString('id-ID')}</div>
+                        <div class="point-label">Points</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        };
+        if (!document.startViewTransition) {
+            renderData();
+        }
+        else {
+            document.startViewTransition(() => {
+                renderData();
+            });
+        }
     }
     catch (e) {
         console.error("Terjadi kesalahan:", e.message);
