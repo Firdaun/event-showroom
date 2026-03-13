@@ -121,3 +121,9 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.3s; /* Ubah angka ini untuk memperlambat/mempercepat (0.8 detik) */
+    animation-timing-function: ease-in-out;
+}
