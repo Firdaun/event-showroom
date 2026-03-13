@@ -13,7 +13,7 @@ async function loadRankingData() {
             const card = document.createElement('div')
             card.className = 'member-card'
             card.setAttribute('data-rank', member.rank)
-            const cleanName = member.room.name.replace(/\s*\(JKT48\)/i, '')
+            const cleanName = member.room.name.replace(/\s*[（\(]JKT48[）\)]/i, '')
             card.innerHTML = `
                 <div class="rank-info">
                     <div class="rank-number">${member.rank}</div>
@@ -40,5 +40,5 @@ async function loadRankingData() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadRankingData()
-    setInterval(loadRankingData, 5000)
+    setInterval(loadRankingData, 20000)
 })

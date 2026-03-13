@@ -8,7 +8,7 @@ const port = 5000
 app.use(cors())
 app.use(express.static('public'))
 
-app.get('/api/ranking', async (req, res) => {
+app.get('/api/ranking', async (_, res) => {
     try {
         console.log('Sedang mengambil data dari showroom')
         const response = await axios.get('https://www.showroom-live.com/api/events/41907/ranking?room_id=318118')
