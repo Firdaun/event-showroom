@@ -32,7 +32,7 @@ async function loadRankingData() {
         console.error("Terjadi kesalahan:", e.message)
         container.innerHTML = `
             <div style="text-align: center; color: #ef4444; padding: 20px;">
-                Gagal memuat data. Pastikan server backend main.js sudah berjalan.
+                Gagal memuat data. Server error
             </div>
         `
     }
