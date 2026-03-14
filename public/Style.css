@@ -8,10 +8,7 @@
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #0f172a;
     color: #f8fafc;
     min-height: 100vh;
     padding: 2rem 1rem;
@@ -57,7 +54,6 @@ body {
     50% { opacity: 0.4; }
 }
 
-/* Desain Kotak Tiap Member */
 .member-card {
     background: #1e293b;
     border: 1px solid #334155;
@@ -90,7 +86,6 @@ body {
     text-align: center;
 }
 
-/* Pewarnaan Khusus Top 3 */
 .member-card[data-rank="1"] .rank-number { color: #fbbf24; text-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
 .member-card[data-rank="2"] .rank-number { color: #cbd5e1; }
 .member-card[data-rank="3"] .rank-number { color: #d97706; }
@@ -124,6 +119,6 @@ body {
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-    animation-duration: 0.3s; /* Ubah angka ini untuk memperlambat/mempercepat (0.8 detik) */
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
 }

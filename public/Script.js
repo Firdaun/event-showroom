@@ -51,6 +51,6 @@ async function loadRankingData() {
 }
 document.addEventListener('DOMContentLoaded', () => {
     loadRankingData();
-    setInterval(loadRankingData, 20000);
+    setInterval(loadRankingData, 5000);
 });
 export {};
